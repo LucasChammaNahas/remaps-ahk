@@ -1,7 +1,8 @@
-﻿; ==> HotStrings <=============================================================
-#Include "..\hotkeys\reload-app.ahk"
+﻿; ==> Hotkeys <================================================================
 #Include "..\hotkeys\capslock.ahk"
+#Include "..\hotkeys\reload-app.ahk"
 #Include "..\hotkeys\symbols.ahk"
+#Include "..\hotkeys\disable-alt-key.ahk"
 
 
 ; ==> Config <=================================================================

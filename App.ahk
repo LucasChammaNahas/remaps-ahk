@@ -4,4 +4,4 @@ SetMouseDelay 0
 SendMode "Input"
 SetWorkingDir A_ScriptDir
 
-#Include "Router\router.ahk"
+#Include "router\router.ahk"
