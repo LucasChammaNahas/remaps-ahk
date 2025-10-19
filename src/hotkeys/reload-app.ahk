@@ -2,6 +2,6 @@
 
 #Esc::{
     Send "{Esc}"
-    Message_Box("📢 Reloaded")
+    Message_Box("🪄 Reloaded")
     Reload
 }

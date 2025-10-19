@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 
 ; ^!Space::SetTimer(() => Input_Box("a", "b"), -1000)
-^!Space:: Input_Box("a", "b")
+; ^!Space:: Input_Box("a", "b")
 
 Input_Box(prompt := "", title := "Input") {
     ; === Configuration ===
