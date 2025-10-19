@@ -56,6 +56,8 @@ mark_and_send(keys) {
     Backspace::mark_and_send("+{Home}{Backspace}")
 
     ; Default
+    Enter::mark_and_send("^{Enter}")
+
     a::mark_and_send("^{a}")
     b::mark_and_send("^{b}")
     c::mark_and_send("^{c}")
