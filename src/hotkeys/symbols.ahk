@@ -35,7 +35,7 @@
     <^>!r:: Send("{Raw}9")
 
     ;--> T <-------------------------------
-    <!t:: Send("{Raw}{U+00A3}")   ;Alt L (£)
+    <!t:: Send("{U+00A3}")   ;Alt L (£)
     >!t:: return             ;Alt R
     <^>!t:: return           ;AltGr
 

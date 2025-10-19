@@ -1,8 +1,13 @@
 ﻿; ==> Hotkeys <================================================================
-#Include "..\hotkeys\capslock.ahk"
-#Include "..\hotkeys\reload-app.ahk"
-#Include "..\hotkeys\symbols.ahk"
-#Include "..\hotkeys\disable-alt-key.ahk"
+#Include ".\components\message-box.ahk"
+
+
+; ==> Hotkeys <================================================================
+#Include ".\hotkeys\capslock.ahk"
+#Include ".\hotkeys\disable-office-button.ahk"
+#Include ".\hotkeys\disable-alt.ahk"
+#Include ".\hotkeys\reload-app.ahk"
+#Include ".\hotkeys\symbols.ahk"
 
 
 ; ==> Config <=================================================================

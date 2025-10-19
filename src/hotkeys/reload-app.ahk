@@ -2,6 +2,6 @@
 
 #Esc::{
     Send "{Esc}"
-    MsgBox "Reloading App...", , "T1"
+    Message_Box("⚠️ Reloaded")
     Reload
 }
