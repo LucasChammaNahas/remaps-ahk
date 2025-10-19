@@ -1,178 +1,172 @@
+#Requires AutoHotkey v2.0
 
-#If $symbolsController = 1 && !GetKeyState("CapsLock", "P")
+#HotIf !GetKeyState("CapsLock", "P")
+    ;==> MAJOR KEYS <====================================================
 
-  ;==> MAJOR KEYS <====================================================
+    ;--> DEFAULT <-------------------------
+    !Enter::     Send("{Enter}")
+    !Backspace:: Send("{Backspace}")
 
-  ;--> DEFAULT <-------------------------
-  !Enter::     Send {Enter}
-  !Backspace:: Send {Backspace}
+    ;--> SPACE <---------------------------
+    <!Space::  Send("{Space}")                      ;Alt L
+    >!Space::  Send("{Space}")                      ;Alt R
+    <^>!Space::Send("{Space}")                      ;AltGr
 
-  ;--> SPACE <---------------------------
-  <!Space::  Send    {Space}                      ;Alt L
-  >!Space::  Send    {Space}                      ;Alt R
-  <^>!Space::Send    {Space}                      ;AltGr
-  <+Space::  Send    {Space}                      ;Shift L
-  >^Space::  Send    console.log('--> ', ){Left}  ;Ctrl R
+    ;==> LEFT HAND <=====================================================
 
+    ;-->> Q <------------------------------
+    <!q:: Send("{Raw}#")
+    >!q:: Send("{Raw}0")
+    <^>!q:: Send("{Raw}0")
 
+    ;--> W <-------------------------------
+    <!w:: Send("{Raw}|")
+    >!w:: Send("{Raw}7")
+    <^>!w:: Send("{Raw}7")
 
-  ;==> LEFT HAND <=====================================================
-  
-  ;-->> Q <------------------------------
-    <!q:: SendRaw # ;Alt L
-    >!q:: SendRaw 0 ;Alt R
-  <^>!q:: SendRaw 0 ;AltGr
+    ;--> E <-------------------------------
+    <!e:: Send("{Raw}[")
+    >!e:: Send("{Raw}8")
+    <^>!e:: Send("{Raw}8")
 
-  ;--> W <-------------------------------
-    <!w:: SendRaw | ;Alt L
-    >!w:: SendRaw 7 ;Alt R
-  <^>!w:: SendRaw 7 ;AltGr
+    ;--> R <-------------------------------
+    <!r:: Send("{Raw}]")
+    >!r:: Send("{Raw}9")
+    <^>!r:: Send("{Raw}9")
 
-  ;--> E <-------------------------------
-    <!e:: SendRaw [ ;Alt L
-    >!e:: SendRaw 8 ;Alt R
-  <^>!e:: SendRaw 8 ;AltGr
+    ;--> T <-------------------------------
+    <!t:: Send("{Raw}{U+00A3}")   ;Alt L (£)
+    >!t:: return             ;Alt R
+    <^>!t:: return           ;AltGr
 
-  ;--> R <-------------------------------
-    <!r:: SendRaw ] ;Alt L
-    >!r:: SendRaw 9 ;Alt R
-  <^>!r:: SendRaw 9 ;AltGr
+    ;--> A <-------------------------------
+    <!a:: Send("{Raw}@")
+    >!a:: Send("{Raw}0")
+    <^>!a:: Send("{Raw}0")
 
-  ;--> T <-------------------------------
-    <!t:: Send {U+00A3} ;Alt L (£)
-    >!t:: return        ;Alt R
-  <^>!t:: return        ;AltGr
+    ;--> S <-------------------------------
+    <!s:: Send("{Raw}(")
+    >!s:: Send("{Raw}4")
+    <^>!s:: Send("{Raw}4")
 
-  ;--> A <-------------------------------
-    <!a:: SendRaw @ ;Alt L
-    >!a:: SendRaw 0 ;Alt R
-  <^>!a:: SendRaw 0 ;AltGr
+    ;--> D <-------------------------------
+    <!d:: Send("{Raw})")
+    >!d:: Send("{Raw}5")
+    <^>!d:: Send("{Raw}5")
 
-  ;--> S <-------------------------------
-    <!s:: SendRaw ( ;Alt L
-    >!s:: SendRaw 4 ;Alt R
-  <^>!s:: SendRaw 4 ;AltGr
+    ;--> F <-------------------------------
+    <!f:: Send("{Raw}`%")       ;Alt L
+    >!f:: Send("{Raw}6")        ;Alt R
+    <^>!f:: Send("{Raw}6")      ;AltGr
 
-  ;--> D <-------------------------------
-    <!d:: SendRaw ) ;Alt L
-    >!d:: SendRaw 5 ;Alt R
-  <^>!d:: SendRaw 5 ;AltGr
+    ;--> G <-------------------------------
+    <!g:: Send("{Raw}*")
+    >!g:: return
+    <^>!g:: return
 
-  ;--> F <-------------------------------
-    <!f:: Send    `% ;Alt L
-    >!f:: SendRaw 6  ;Alt R
-  <^>!f:: SendRaw 6  ;AltGr
-
-  ;--> G <-------------------------------
-    <!g:: SendRaw * ;Alt L
-    >!g:: return    ;Alt R
-  <^>!g:: return    ;AltGr
-
-  ;--> Z <-------------------------------
-    <!z:: return    ;Alt L
-    >!z:: SendRaw 0 ;Alt R
-  <^>!z:: SendRaw 0 ;AltGr
+    ;--> Z <-------------------------------
+    <!z:: return
+    >!z:: Send("{Raw}0")
+    <^>!z:: Send("{Raw}0")
     
-  ;--> X <-------------------------------
-    <!x:: SendRaw \ ;Alt L
-    >!x:: SendRaw 1 ;Alt R
-  <^>!x:: SendRaw 1 ;AltGr
+    ;--> X <-------------------------------
+    <!x:: Send("{Raw}\")
+    >!x:: Send("{Raw}1")
+    <^>!x:: Send("{Raw}1")
 
-  ;--> C <-------------------------------
-    <!c:: SendRaw ^ ;Alt L
-    >!c:: SendRaw 2 ;Alt R
-  <^>!c:: SendRaw 2 ;AltGr
+    ;--> C <-------------------------------
+    <!c:: Send("{Raw}^")
+    >!c:: Send("{Raw}2")
+    <^>!c:: Send("{Raw}2")
 
-  ;--> V <-------------------------------
-    <!v:: SendRaw $ ;Alt L
-    >!v:: SendRaw 3 ;Alt R
-  <^>!v:: SendRaw 3 ;AltGr
+    ;--> V <-------------------------------
+    <!v:: Send("{Raw}$")
+    >!v:: Send("{Raw}3")
+    <^>!v:: Send("{Raw}3")
 
-  ;--> B <-------------------------------
-    <!b:: SendRaw + ;Alt L
-    >!b:: return    ;Alt R
-  <^>!b:: return    ;AltGr
+    ;--> B <-------------------------------
+    <!b:: Send("{Raw}+")
+    >!b:: return
+    <^>!b:: return
 
+    ;==> RIGHT HAND <====================================================
 
+    ;--> Y <-------------------------------
+    <!y:: Send("{Raw}~")
+    >!y:: return
+    <^>!y:: return
 
-  ;==> RIGHT HAND <====================================================
+    ;--> U <-------------------------------
+    <!u:: Send("{Raw}<")
+    >!u:: Send("{Raw}<")
+    <^>!u:: Send("{Raw}<")
 
-  ;--> Y <-------------------------------
-    <!y:: SendRaw ~ ;Alt L
-    >!y:: return    ;Alt R
-  <^>!y:: return    ;AltGr
+    ;--> I <-------------------------------
+    <!i:: Send("{Raw}=")
+    >!i:: Send("{Raw}=")
+    <^>!i:: Send("{Raw}=")
 
-  ;--> U <-------------------------------
-    <!u:: SendRaw < ;Alt L
-    >!u:: SendRaw < ;Alt R
-  <^>!u:: SendRaw < ;AltGr
+    ;--> O <-------------------------------
+    <!o:: Send("{Raw}>")
+    >!o:: Send("{Raw}>")
+    <^>!o:: Send("{Raw}>")
 
-  ;--> I <-------------------------------
-    <!i:: SendRaw `= ;Alt L
-    >!i:: SendRaw `= ;Alt R
-  <^>!i:: SendRaw `= ;AltGr
+    ;--> P <-------------------------------
+    <!p:: Send("{Raw}!")
+    >!p:: return
+    <^>!p:: return
 
-  ;--> O <-------------------------------
-    <!o:: SendRaw > ;Alt L
-    >!o:: SendRaw > ;Alt R
-  <^>!o:: SendRaw > ;AltGr
+    ;--> H <-------------------------------
+    <!h:: Send("{Raw}&")
+    >!h:: Send("{Raw}`%")
+    <^>!h:: Send("{Raw}`%")
 
-  ;--> P <-------------------------------
-    <!p:: SendRaw ! ;Alt L
-    >!p:: return    ;Alt R
-  <^>!p:: return    ;AltGr
+    ;--> J <-------------------------------
+    <!j:: Send("{Raw}{")
+    >!j:: Send("{Raw}-")
+    <^>!j:: Send("{Raw}-")
 
-  ;--> H <-------------------------------
-    <!h:: SendRaw &  ;Alt L
-    >!h:: SendRaw `% ;Alt R
-  <^>!h:: SendRaw `% ;AltGr
+    ;--> K <-------------------------------
+    <!k:: Send("{Raw}}")
+    >!k:: Send("{Raw}+")
+    <^>!k:: Send("{Raw}+")
 
-  ;--> J <-------------------------------
-    <!j:: SendRaw { ;Alt L
-    >!j:: SendRaw - ;Alt R
-  <^>!j:: SendRaw - ;AltGr
+    ;--> L <-------------------------------
+    <!l:: Send("{Raw}``")
+    >!l:: Send("{Raw}*")
+    <^>!l:: Send("{Raw}*")
 
-  ;--> K <-------------------------------
-    <!k:: SendRaw } ;Alt L
-    >!k:: SendRaw + ;Alt R
-  <^>!k:: SendRaw + ;AltGr
+    ;--> ; <-------------------------------
+    <!`;:: Send("{Raw}:")
+    >!`;:: Send("{Raw}/")
+    <^>!`;:: Send("{Raw}/")
 
-  ;--> L <-------------------------------
-    <!l:: SendRaw `` ;Alt L
-    >!l:: SendRaw *  ;Alt R
-  <^>!l:: SendRaw *  ;AltGr
+    ;--> ' <-------------------------------
+    <!':: Send('"')        ;Alt L
 
-  ;--> ; <-------------------------------
-    <!`;:: SendRaw : ;Alt L
-    >!`;:: SendRaw / ;Alt R
-  <^>!`;:: SendRaw / ;AltGr
+    ;--> N <-------------------------------
+    <!n:: Send("{Raw}-")
+    >!n:: return
+    <^>!n:: return
 
-  ;--> ' <-------------------------------
-    <!':: SendRaw " ;Alt L
+    ;--> M <-------------------------------
+    <!m:: Send("{Raw}_")
+    >!m:: Send("{Raw}0")
+    <^>!m:: Send("{Raw}0")
 
-  ;--> N <-------------------------------
-    <!n:: SendRaw - ;Alt L
-    >!n:: return    ;Alt R
-  <^>!n:: return    ;AltGr
+    ;--> , <-------------------------------
+    <!,:: Send("{Raw},")
+    >!,:: Send("{Raw},")
+    <^>!,:: Send("{Raw},")
 
-  ;--> M <-------------------------------
-    <!m:: SendRaw _ ;Alt L
-    >!m:: SendRaw 0 ;Alt R
-  <^>!m:: SendRaw 0 ;AltGr
+    ;--> . <-------------------------------
+    <!.:: Send("{Raw}.")
+    >!.:: Send("{Raw}.")
+    <^>!.:: Send("{Raw}.")
 
-  ;--> , <-------------------------------
-    <!,:: SendRaw `, ;Alt L
-    >!,:: SendRaw `, ;Alt R
-  <^>!,:: SendRaw `, ;AltGr
+    ;--> / <-------------------------------
+    <!/:: Send("{Raw}?")
+    >!/:: return
+    <^>!/:: return
 
-  ;--> . <-------------------------------
-    <!.:: SendRaw . ;Alt L
-    >!.:: SendRaw . ;Alt R
-  <^>!.:: SendRaw . ;AltGr
-
-  ;--> / <-------------------------------
-    <!/:: SendRaw ? ;Alt L
-    >!/:: return    ;Alt R
-  <^>!/:: return    ;AltGr
-
-#If
+#HotIf
