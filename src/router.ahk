@@ -4,7 +4,7 @@
 ; ==> Components <=============================================================
 #Include ".\components\message-box.ahk"
 #Include ".\components\input-field.ahk"
-; #Include ".\components\boxes\base-box.ahk"
+#Include ".\components\boxes\base-box.ahk"
 
 ; ==> Hotkeys <================================================================
 #Include ".\hotkeys\capslock.ahk"

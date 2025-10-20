@@ -1,13 +1,16 @@
 #Requires AutoHotkey v2.0
 
-merge_objects(default, override) {
-    result := {}
+class Utils {
+    static merge_objects(base, override) {
+        merged := {}
 
-    for k, v in default
-        result.%k% := v
+        for key, value in base
+            merged[key] := Value
 
-    for k, v in override
-        result.%k% := v
+        for key, value in override
+            merged[key] := Value
 
-    return result
+
+        return merged
+    }
 }
