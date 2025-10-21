@@ -2,7 +2,7 @@
 
 class Utils {
     static merge_objects(base, override) {
-        merged := {}
+        merged := Map()
 
         for key, value in base
             merged[key] := Value

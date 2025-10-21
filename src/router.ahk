@@ -2,8 +2,7 @@
 #Include ".\utils\utils.ahk"
 
 ; ==> Components <=============================================================
-#Include ".\components\message-box.ahk"
-#Include ".\components\input-field.ahk"
+; #Include ".\components\input-field.ahk"
 #Include ".\components\boxes\base-box.ahk"
 
 ; ==> Hotkeys <================================================================
