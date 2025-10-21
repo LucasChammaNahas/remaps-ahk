@@ -5,7 +5,7 @@ class Base_Box {
         base_config := Map(
             "bg_color", "1e1e1e",
             "text_color", "86d486",
-            "title_color", "ff8e47",
+            "title_color", "white",
             "divider_color", "555555",
             "font", "Courier New",
             "font_size", 12,
@@ -14,8 +14,8 @@ class Base_Box {
             "margin_x", 32,
             "margin_y", 32,
             "corner_radius", 64,
-            "fade_step", 25,
-            "fade_delay", 15,
+            "opacity", 255,
+            "fade_delay", 20,
             "display_time", 1000
         )
 
@@ -68,15 +68,25 @@ class Base_Box {
     }
 
     fade_in() {
-        loop 10 {
-            WinSetTransparent(A_Index * this.config["fade_step"], this.gui.Hwnd)
+        iterations := 10
+        max_opacity := this.config["opacity"]
+        step := max_opacity / (iterations - 1)
+
+        loop iterations {
+            opacity := (A_Index - 1) * Integer(step)
+            WinSetTransparent(opacity, this.gui.Hwnd)
             Sleep this.config["fade_delay"]
         }
     }
 
     fade_out() {
-        loop 10 {
-            WinSetTransparent(255 - A_Index * this.config["fade_step"], this.gui.Hwnd)
+        iterations := 10
+        max_opacity := this.config["opacity"]
+        step := max_opacity / (iterations - 1)
+
+        loop iterations {
+            opacity := max_opacity - (A_Index - 1) * Integer(step)
+            WinSetTransparent(opacity, this.gui.Hwnd)
             Sleep this.config["fade_delay"]
         }
     }

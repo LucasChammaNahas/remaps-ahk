@@ -4,13 +4,14 @@
 
 #Esc:: {
     config := Map(
-        "title_font_size", 64,
-        "width", 450,
-        "margin_y", 64,
-        "corner_radius", 128
+        "title_font_size", 48,
+        "width", 320,
+        "margin_y", 48,
+        "corner_radius", 128,
+        "opacity", 230,
     )
 
     Send "{Esc}"
-    Message_Box("🪄 Reloaded", '', config).render()
+    Message_Box("🪄 Scriptus Revivus", , config).render()
     Reload
 }
