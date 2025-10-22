@@ -68,24 +68,18 @@ class Base_Box {
     }
 
     fade_in() {
-        iterations := 10
-        max_opacity := this.config["opacity"]
-        step := max_opacity / (iterations - 1)
-
-        loop iterations {
-            opacity := (A_Index - 1) * Integer(step)
+        config := this._get_fade_config('in')
+        loop config.iteration_count {
+            opacity := config.calculate_opacity(A_Index)
             WinSetTransparent(opacity, this.gui.Hwnd)
             Sleep this.config["fade_delay"]
         }
     }
 
     fade_out() {
-        iterations := 10
-        max_opacity := this.config["opacity"]
-        step := max_opacity / (iterations - 1)
-
-        loop iterations {
-            opacity := max_opacity - (A_Index - 1) * Integer(step)
+        config := this._get_fade_config('out')
+        loop config.iteration_count {
+            opacity := config.calculate_opacity(A_Index)
             WinSetTransparent(opacity, this.gui.Hwnd)
             Sleep this.config["fade_delay"]
         }
@@ -93,5 +87,22 @@ class Base_Box {
 
     destroy() {
         this.gui.Destroy()
+    }
+
+    _get_fade_config(type) {
+        iteration_count := 10
+        max_opacity := this.config["opacity"]
+        step := Integer(max_opacity / (iteration_count - 1))
+        calculate_opacity(_, loop_index) {
+            if(type = 'in'){
+                return (loop_index - 1) * step
+            }
+            return max_opacity - (loop_index - 1) * step
+        }
+
+        return {
+            iteration_count: iteration_count,
+            calculate_opacity: calculate_opacity,
+        }
     }
 }
