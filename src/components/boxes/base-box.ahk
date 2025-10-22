@@ -16,7 +16,6 @@ class Base_Box {
             "corner_radius", 64,
             "opacity", 255,
             "fade_delay", 20,
-            "display_time", 1000
         )
 
         this.config := Utils.merge_objects(base_config, config_overrides)
@@ -30,7 +29,7 @@ class Base_Box {
         this.position_gui()
         this.apply_rounded_corners()
         this.fade_in()
-        Sleep this.config["display_time"]
+        this.apply_logic()
         this.fade_out()
         this.destroy()
     }
@@ -74,6 +73,10 @@ class Base_Box {
             WinSetTransparent(opacity, this.gui.Hwnd)
             Sleep this.config["fade_delay"]
         }
+    }
+
+    apply_logic() {
+
     }
 
     fade_out() {

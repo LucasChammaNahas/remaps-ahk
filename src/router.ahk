@@ -2,8 +2,7 @@
 #Include ".\utils\utils.ahk"
 
 ; ==> Components <=============================================================
-; #Include ".\components\input-field.ahk"
-#Include ".\components\boxes\base-box.ahk"
+#Include ".\components\boxes\input-box.ahk"
 
 ; ==> Hotkeys <================================================================
 #Include ".\hotkeys\capslock.ahk"

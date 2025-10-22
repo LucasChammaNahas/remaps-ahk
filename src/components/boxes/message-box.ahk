@@ -31,4 +31,8 @@ class Message_Box extends Base_Box {
             )
         }
     }
+
+    apply_logic() {
+        Sleep 1500
+    }
 }
